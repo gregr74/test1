@@ -9,17 +9,17 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 9999
 
-    steps:
+     steps:
     - name: Загрузка Ngrok.
       run: |
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-        Invoke-WebRequest https://raw.githubusercontent.com/white-hackers/VDS/main/start.bat -OutFile start.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/white-hackers/VDS/main/loop.bat -OutFile loop.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/gregr74/yyt/white-hackers/VDS/main/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/gregr74/yyt/white-hackers/VDS/main/loop.bat -OutFile loop.bat
     - name: Загрузка программ.
       run: |
-        Invoke-WebRequest https://raw.githubusercontent.com/white-hackers/VDS/main/launcher/Node.js.lnk -OutFile Node.js.lnk
-        Invoke-WebRequest https://raw.githubusercontent.com/white-hackers/VDS/main/launcher/FastConfigVPS_v2.3.exe -OutFile "FastConfigVPS_v2.3.exe"
-        Invoke-WebRequest https://raw.githubusercontent.com/white-hackers/VDS/main/launcher/Visual%20Studio%202019.lnk -OutFile "Visual Studio 2019.lnk"
+        Invoke-WebRequest https://raw.githubusercontent.com/gregr74/yyt/white-hackers/VDS/main/launcher/Node.js.lnk -OutFile Node.js.lnk
+        Invoke-WebRequest https://raw.githubusercontent.com/gregr74/yyt/white-hackers/VDS/main/launcher/FastConfigVPS_v2.3.exe -OutFile "FastConfigVPS_v2.3.exe"
+        Invoke-WebRequest https://raw.githubusercontent.com/gregr74/yyt/white-hackers/VDS/main/launcher/Visual%20Studio%202019.lnk -OutFile "Visual Studio 2019.lnk"
     - name: Загрузка Ngrok файла.
       run: Expand-Archive ngrok.zip
     - name: Подключение к учётной записи Ngrok.
